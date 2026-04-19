@@ -3,9 +3,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
-const authRoutes = require('./routes/authRoutes');
-const issueRoutes = require("./routes/issueRoutes");
-
 const app = express();
 
 app.use(cors({
@@ -18,7 +15,11 @@ app.use(cors({
     credentials: true
 }));
 
+app.options('*', cors());
 app.use(express.json());
+
+const authRoutes = require('./routes/authRoutes');
+const issueRoutes = require("./routes/issueRoutes");
 
 app.get("/", (req, res) => {
     res.json({ message: "Issue Tracker API is running!" });
