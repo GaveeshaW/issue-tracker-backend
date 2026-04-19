@@ -9,7 +9,12 @@ const issueRoutes = require("./routes/issueRoutes");
 const app = express();
 
 app.use(cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://issue-tracker-frontend-sable.vercel.app",
+        "https://issue-tracker-frontend-oavel97mj-gaveeshawelhena-2637s-projects.vercel.app"
+    ],
     credentials: true
 }));
 
